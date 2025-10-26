@@ -10,6 +10,10 @@ COPY apache/vhost.conf /etc/apache2/sites-available/000-default.conf
 # Copy .htaccess file for URL rewriting
 COPY htaccess /var/www/html/.htaccess
 
+# Set proper permissions for YOURLS
+RUN chown -R www-data:www-data /var/www/html && \
+    chmod 664 /var/www/html/.htaccess
+
 # Enable required Apache modules
 RUN a2enmod rewrite headers
 
