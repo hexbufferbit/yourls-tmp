@@ -1,0 +1,19 @@
+# Production Docker Compose Override (CDN + Backend)
+# Use: docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+
+services:
+  yourls:
+    build:
+      context: ./docker/yourls
+      dockerfile: Dockerfile
+      args:
+        PRODUCTION: "true"  # Enable production optimizations
+    ports:
+      - "9001:9001"  # CDN points to this port
+    environment:
+      - APACHE_LOG_LEVEL=warn
+    volumes:
+      - yourls_logs:/var/log/apache2
+
+volumes:
+  yourls_logs:

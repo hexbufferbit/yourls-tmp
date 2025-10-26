@@ -1,0 +1,14 @@
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Docker artifacts
+*.pid
+.DS_Store
