@@ -12,7 +12,8 @@ COPY htaccess /var/www/html/.htaccess
 
 # Set proper permissions for YOURLS
 RUN chown -R www-data:www-data /var/www/html && \
-    chmod 664 /var/www/html/.htaccess
+    chmod 666 /var/www/html/.htaccess && \
+    chmod 755 /var/www/html
 
 # Enable required Apache modules
 RUN a2enmod rewrite headers
