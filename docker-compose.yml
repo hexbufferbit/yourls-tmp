@@ -20,7 +20,6 @@ services:
         condition: service_healthy
     volumes:
       - yourls_data:/var/www/html/user
-      - ./docker/yourls/htaccess:/var/www/html/.htaccess
 
   yourls_db:
     image: mysql:8.0

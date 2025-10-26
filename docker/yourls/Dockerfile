@@ -7,12 +7,8 @@ ARG PRODUCTION=false
 COPY apache/ports.conf /etc/apache2/ports.conf
 COPY apache/vhost.conf /etc/apache2/sites-available/000-default.conf
 
-# Copy .htaccess file for URL rewriting
-COPY htaccess /var/www/html/.htaccess
-
-# Set proper permissions for YOURLS
+# Set proper permissions for YOURLS (YOURLS will create its own .htaccess)
 RUN chown -R www-data:www-data /var/www/html && \
-    chmod 666 /var/www/html/.htaccess && \
     chmod 755 /var/www/html
 
 # Enable required Apache modules

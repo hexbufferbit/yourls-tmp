@@ -57,7 +57,6 @@ After installation:
 - `.env.example` – sample environment configuration
 - `docker/yourls/Dockerfile` – custom Apache configuration
 - `docker/yourls/apache/` – Apache configuration files
-- `docker/yourls/htaccess` – URL rewriting rules
 
 ## Production Deployment
 
